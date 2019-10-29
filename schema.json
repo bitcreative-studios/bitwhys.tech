@@ -392,6 +392,16 @@
                   "ofType": null
                 },
                 "defaultValue": null
+              },
+              {
+                "name": "childMdx",
+                "description": "",
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "MdxFilterInput",
+                  "ofType": null
+                },
+                "defaultValue": null
               }
             ],
             "type": { "kind": "OBJECT", "name": "File", "ofType": null },
@@ -441,6 +451,214 @@
               "ofType": {
                 "kind": "OBJECT",
                 "name": "FileConnection",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "mdx",
+            "description": null,
+            "args": [
+              {
+                "name": "rawBody",
+                "description": "",
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "StringQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "fileAbsolutePath",
+                "description": "",
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "StringQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "frontmatter",
+                "description": "",
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "MdxFrontmatterFilterInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "body",
+                "description": "",
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "StringQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "excerpt",
+                "description": "",
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "StringQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "headings",
+                "description": "",
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "MdxHeadingMdxFilterListInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "html",
+                "description": "",
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "StringQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "mdxAST",
+                "description": "",
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "JSONQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "tableOfContents",
+                "description": "",
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "JSONQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "timeToRead",
+                "description": "",
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "IntQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "wordCount",
+                "description": "",
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "MdxWordCountFilterInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "id",
+                "description": "",
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "StringQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "parent",
+                "description": "",
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "NodeFilterInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "children",
+                "description": "",
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "NodeFilterListInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "internal",
+                "description": "",
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "InternalFilterInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              }
+            ],
+            "type": { "kind": "OBJECT", "name": "Mdx", "ofType": null },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "allMdx",
+            "description": null,
+            "args": [
+              {
+                "name": "filter",
+                "description": "",
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "MdxFilterInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "sort",
+                "description": "",
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "MdxSortInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "skip",
+                "description": null,
+                "type": { "kind": "SCALAR", "name": "Int", "ofType": null },
+                "defaultValue": null
+              },
+              {
+                "name": "limit",
+                "description": null,
+                "type": { "kind": "SCALAR", "name": "Int", "ofType": null },
+                "defaultValue": null
+              }
+            ],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "MdxConnection",
                 "ofType": null
               }
             },
@@ -711,6 +929,16 @@
               },
               {
                 "name": "nodeAPIs",
+                "description": "",
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "StringQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "browserAPIs",
                 "description": "",
                 "type": {
                   "kind": "INPUT_OBJECT",
@@ -1908,6 +2136,366 @@
         "possibleTypes": null
       },
       {
+        "kind": "INPUT_OBJECT",
+        "name": "MdxFilterInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "rawBody",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "fileAbsolutePath",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "frontmatter",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "MdxFrontmatterFilterInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "body",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "excerpt",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "headings",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "MdxHeadingMdxFilterListInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "html",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "mdxAST",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "JSONQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "tableOfContents",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "JSONQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "timeToRead",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "IntQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "wordCount",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "MdxWordCountFilterInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "parent",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "NodeFilterInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "children",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "NodeFilterListInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "internal",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "InternalFilterInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "MdxFrontmatterFilterInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "title",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "path",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "tag",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "MdxHeadingMdxFilterListInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "elemMatch",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "MdxHeadingMdxFilterInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "MdxHeadingMdxFilterInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "value",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "depth",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "IntQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "JSONQueryOperatorInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "eq",
+            "description": null,
+            "type": { "kind": "SCALAR", "name": "JSON", "ofType": null },
+            "defaultValue": null
+          },
+          {
+            "name": "ne",
+            "description": null,
+            "type": { "kind": "SCALAR", "name": "JSON", "ofType": null },
+            "defaultValue": null
+          },
+          {
+            "name": "in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": { "kind": "SCALAR", "name": "JSON", "ofType": null }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "nin",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": { "kind": "SCALAR", "name": "JSON", "ofType": null }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "regex",
+            "description": null,
+            "type": { "kind": "SCALAR", "name": "JSON", "ofType": null },
+            "defaultValue": null
+          },
+          {
+            "name": "glob",
+            "description": null,
+            "type": { "kind": "SCALAR", "name": "JSON", "ofType": null },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "SCALAR",
+        "name": "JSON",
+        "description": "The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).",
+        "fields": null,
+        "inputFields": null,
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "MdxWordCountFilterInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "paragraphs",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "IntQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "sentences",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "IntQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "words",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "IntQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
         "kind": "OBJECT",
         "name": "File",
         "description": null,
@@ -2439,6 +3027,14 @@
             },
             "isDeprecated": false,
             "deprecationReason": null
+          },
+          {
+            "name": "childMdx",
+            "description": null,
+            "args": [],
+            "type": { "kind": "OBJECT", "name": "Mdx", "ofType": null },
+            "isDeprecated": false,
+            "deprecationReason": null
           }
         ],
         "inputFields": null,
@@ -2513,6 +3109,7 @@
         "enumValues": null,
         "possibleTypes": [
           { "kind": "OBJECT", "name": "File", "ofType": null },
+          { "kind": "OBJECT", "name": "Mdx", "ofType": null },
           { "kind": "OBJECT", "name": "SitePage", "ofType": null },
           { "kind": "OBJECT", "name": "SitePlugin", "ofType": null },
           { "kind": "OBJECT", "name": "Site", "ofType": null },
@@ -2611,6 +3208,366 @@
               "name": null,
               "ofType": { "kind": "SCALAR", "name": "String", "ofType": null }
             },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "Mdx",
+        "description": null,
+        "fields": [
+          {
+            "name": "rawBody",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": { "kind": "SCALAR", "name": "String", "ofType": null }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "fileAbsolutePath",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": { "kind": "SCALAR", "name": "String", "ofType": null }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "frontmatter",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "MdxFrontmatter",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "body",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": { "kind": "SCALAR", "name": "String", "ofType": null }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "excerpt",
+            "description": null,
+            "args": [
+              {
+                "name": "pruneLength",
+                "description": null,
+                "type": { "kind": "SCALAR", "name": "Int", "ofType": null },
+                "defaultValue": "140"
+              }
+            ],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": { "kind": "SCALAR", "name": "String", "ofType": null }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "headings",
+            "description": null,
+            "args": [
+              {
+                "name": "depth",
+                "description": null,
+                "type": {
+                  "kind": "ENUM",
+                  "name": "HeadingsMdx",
+                  "ofType": null
+                },
+                "defaultValue": null
+              }
+            ],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "MdxHeadingMdx",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "html",
+            "description": null,
+            "args": [],
+            "type": { "kind": "SCALAR", "name": "String", "ofType": null },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "mdxAST",
+            "description": null,
+            "args": [],
+            "type": { "kind": "SCALAR", "name": "JSON", "ofType": null },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "tableOfContents",
+            "description": null,
+            "args": [
+              {
+                "name": "maxDepth",
+                "description": null,
+                "type": { "kind": "SCALAR", "name": "Int", "ofType": null },
+                "defaultValue": null
+              }
+            ],
+            "type": { "kind": "SCALAR", "name": "JSON", "ofType": null },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "timeToRead",
+            "description": null,
+            "args": [],
+            "type": { "kind": "SCALAR", "name": "Int", "ofType": null },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "wordCount",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "MdxWordCount",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "id",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": { "kind": "SCALAR", "name": "ID", "ofType": null }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "parent",
+            "description": null,
+            "args": [],
+            "type": { "kind": "INTERFACE", "name": "Node", "ofType": null },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "children",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "INTERFACE",
+                    "name": "Node",
+                    "ofType": null
+                  }
+                }
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "internal",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": { "kind": "OBJECT", "name": "Internal", "ofType": null }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [{ "kind": "INTERFACE", "name": "Node", "ofType": null }],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "MdxFrontmatter",
+        "description": null,
+        "fields": [
+          {
+            "name": "title",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": { "kind": "SCALAR", "name": "String", "ofType": null }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "path",
+            "description": null,
+            "args": [],
+            "type": { "kind": "SCALAR", "name": "String", "ofType": null },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "tag",
+            "description": null,
+            "args": [],
+            "type": { "kind": "SCALAR", "name": "String", "ofType": null },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "ENUM",
+        "name": "HeadingsMdx",
+        "description": null,
+        "fields": null,
+        "inputFields": null,
+        "interfaces": null,
+        "enumValues": [
+          {
+            "name": "h1",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "h2",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "h3",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "h4",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "h5",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "h6",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "MdxHeadingMdx",
+        "description": null,
+        "fields": [
+          {
+            "name": "value",
+            "description": null,
+            "args": [],
+            "type": { "kind": "SCALAR", "name": "String", "ofType": null },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "depth",
+            "description": null,
+            "args": [],
+            "type": { "kind": "SCALAR", "name": "Int", "ofType": null },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "MdxWordCount",
+        "description": null,
+        "fields": [
+          {
+            "name": "paragraphs",
+            "description": null,
+            "args": [],
+            "type": { "kind": "SCALAR", "name": "Int", "ofType": null },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sentences",
+            "description": null,
+            "args": [],
+            "type": { "kind": "SCALAR", "name": "Int", "ofType": null },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "words",
+            "description": null,
+            "args": [],
+            "type": { "kind": "SCALAR", "name": "Int", "ofType": null },
             "isDeprecated": false,
             "deprecationReason": null
           }
@@ -3002,6 +3959,16 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "InternalFilterInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "childMdx",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "MdxFilterInput",
               "ofType": null
             },
             "defaultValue": null
@@ -3777,6 +4744,336 @@
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
+          },
+          {
+            "name": "childMdx___rawBody",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "childMdx___fileAbsolutePath",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "childMdx___frontmatter___title",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "childMdx___frontmatter___path",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "childMdx___frontmatter___tag",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "childMdx___body",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "childMdx___excerpt",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___headings",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___headings___value",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___headings___depth",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___html",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___mdxAST",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___tableOfContents",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___timeToRead",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___wordCount___paragraphs",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___wordCount___sentences",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___wordCount___words",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___id",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___parent___id",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___parent___parent___id",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___parent___parent___children",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___parent___children",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___parent___children___id",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___parent___children___children",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___parent___internal___content",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___parent___internal___contentDigest",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___parent___internal___description",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___parent___internal___fieldOwners",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___parent___internal___ignoreType",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___parent___internal___mediaType",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___parent___internal___owner",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___parent___internal___type",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___children",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___children___id",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___children___parent___id",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___children___parent___children",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___children___children",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___children___children___id",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___children___children___children",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___children___internal___content",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___children___internal___contentDigest",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___children___internal___description",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___children___internal___fieldOwners",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___children___internal___ignoreType",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___children___internal___mediaType",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___children___internal___owner",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___children___internal___type",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___internal___content",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___internal___contentDigest",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___internal___description",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___internal___fieldOwners",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___internal___ignoreType",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___internal___mediaType",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___internal___owner",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___internal___type",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           }
         ],
         "possibleTypes": null
@@ -4192,6 +5489,981 @@
       },
       {
         "kind": "INPUT_OBJECT",
+        "name": "MdxSortInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "fields",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "ENUM",
+                "name": "MdxFieldsEnum",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "order",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "ENUM",
+                "name": "SortOrderEnum",
+                "ofType": null
+              }
+            },
+            "defaultValue": "[ASC]"
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "ENUM",
+        "name": "MdxFieldsEnum",
+        "description": null,
+        "fields": null,
+        "inputFields": null,
+        "interfaces": null,
+        "enumValues": [
+          {
+            "name": "rawBody",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "fileAbsolutePath",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "frontmatter___title",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "frontmatter___path",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "frontmatter___tag",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "body",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "excerpt",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "headings",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "headings___value",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "headings___depth",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "html",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "mdxAST",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "tableOfContents",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "timeToRead",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "wordCount___paragraphs",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "wordCount___sentences",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "wordCount___words",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "id",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___id",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___parent___id",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___parent___parent___id",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___parent___parent___children",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___parent___children",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___parent___children___id",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___parent___children___children",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___parent___internal___content",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___parent___internal___contentDigest",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___parent___internal___description",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___parent___internal___fieldOwners",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___parent___internal___ignoreType",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___parent___internal___mediaType",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___parent___internal___owner",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___parent___internal___type",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___children",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___children___id",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___children___parent___id",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___children___parent___children",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___children___children",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___children___children___id",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___children___children___children",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___children___internal___content",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___children___internal___contentDigest",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___children___internal___description",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___children___internal___fieldOwners",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___children___internal___ignoreType",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___children___internal___mediaType",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___children___internal___owner",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___children___internal___type",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___internal___content",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___internal___contentDigest",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___internal___description",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___internal___fieldOwners",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___internal___ignoreType",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___internal___mediaType",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___internal___owner",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "parent___internal___type",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___id",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___parent___id",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___parent___parent___id",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___parent___parent___children",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___parent___children",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___parent___children___id",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___parent___children___children",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___parent___internal___content",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___parent___internal___contentDigest",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___parent___internal___description",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___parent___internal___fieldOwners",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___parent___internal___ignoreType",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___parent___internal___mediaType",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___parent___internal___owner",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___parent___internal___type",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___children",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___children___id",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___children___parent___id",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___children___parent___children",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___children___children",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___children___children___id",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___children___children___children",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___children___internal___content",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___children___internal___contentDigest",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___children___internal___description",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___children___internal___fieldOwners",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___children___internal___ignoreType",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___children___internal___mediaType",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___children___internal___owner",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___children___internal___type",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___internal___content",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___internal___contentDigest",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___internal___description",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___internal___fieldOwners",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___internal___ignoreType",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___internal___mediaType",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___internal___owner",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "children___internal___type",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "internal___content",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "internal___contentDigest",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "internal___description",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "internal___fieldOwners",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "internal___ignoreType",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "internal___mediaType",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "internal___owner",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "internal___type",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          }
+        ],
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "MdxConnection",
+        "description": null,
+        "fields": [
+          {
+            "name": "totalCount",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": { "kind": "SCALAR", "name": "Int", "ofType": null }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "edges",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "MdxEdge",
+                    "ofType": null
+                  }
+                }
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "nodes",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": { "kind": "OBJECT", "name": "Mdx", "ofType": null }
+                }
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "pageInfo",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": { "kind": "OBJECT", "name": "PageInfo", "ofType": null }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "distinct",
+            "description": null,
+            "args": [
+              {
+                "name": "field",
+                "description": null,
+                "type": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "ENUM",
+                    "name": "MdxFieldsEnum",
+                    "ofType": null
+                  }
+                },
+                "defaultValue": null
+              }
+            ],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  }
+                }
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "group",
+            "description": null,
+            "args": [
+              {
+                "name": "skip",
+                "description": null,
+                "type": { "kind": "SCALAR", "name": "Int", "ofType": null },
+                "defaultValue": null
+              },
+              {
+                "name": "limit",
+                "description": null,
+                "type": { "kind": "SCALAR", "name": "Int", "ofType": null },
+                "defaultValue": null
+              },
+              {
+                "name": "field",
+                "description": null,
+                "type": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "ENUM",
+                    "name": "MdxFieldsEnum",
+                    "ofType": null
+                  }
+                },
+                "defaultValue": null
+              }
+            ],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "MdxGroupConnection",
+                    "ofType": null
+                  }
+                }
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "MdxEdge",
+        "description": null,
+        "fields": [
+          {
+            "name": "next",
+            "description": "",
+            "args": [],
+            "type": { "kind": "OBJECT", "name": "Mdx", "ofType": null },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "node",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": { "kind": "OBJECT", "name": "Mdx", "ofType": null }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "previous",
+            "description": "",
+            "args": [],
+            "type": { "kind": "OBJECT", "name": "Mdx", "ofType": null },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "MdxGroupConnection",
+        "description": null,
+        "fields": [
+          {
+            "name": "totalCount",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": { "kind": "SCALAR", "name": "Int", "ofType": null }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "edges",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "MdxEdge",
+                    "ofType": null
+                  }
+                }
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "nodes",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": { "kind": "OBJECT", "name": "Mdx", "ofType": null }
+                }
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "pageInfo",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": { "kind": "OBJECT", "name": "PageInfo", "ofType": null }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "field",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": { "kind": "SCALAR", "name": "String", "ofType": null }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "fieldValue",
+            "description": null,
+            "args": [],
+            "type": { "kind": "SCALAR", "name": "String", "ofType": null },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
         "name": "SitePluginFilterInput",
         "description": null,
         "fields": null,
@@ -4278,6 +6550,16 @@
           },
           {
             "name": "nodeAPIs",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "browserAPIs",
             "description": "",
             "type": {
               "kind": "INPUT_OBJECT",
@@ -4859,6 +7141,18 @@
           },
           {
             "name": "nodeAPIs",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": { "kind": "SCALAR", "name": "String", "ofType": null }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "browserAPIs",
             "description": null,
             "args": [],
             "type": {
@@ -6137,6 +8431,12 @@
             "deprecationReason": null
           },
           {
+            "name": "pluginCreator___browserAPIs",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "pluginCreator___ssrAPIs",
             "description": null,
             "isDeprecated": false,
@@ -7175,6 +9475,12 @@
           },
           {
             "name": "nodeAPIs",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "browserAPIs",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -11571,16 +13877,6 @@
             "deprecationReason": null
           }
         ],
-        "possibleTypes": null
-      },
-      {
-        "kind": "SCALAR",
-        "name": "JSON",
-        "description": "The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).",
-        "fields": null,
-        "inputFields": null,
-        "interfaces": null,
-        "enumValues": null,
         "possibleTypes": null
       }
     ],

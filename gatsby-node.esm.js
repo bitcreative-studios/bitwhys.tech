@@ -1,3 +1,4 @@
+import path from "path"
 import write from "write"
 import { introspectionQuery, graphql, printSchema } from "gatsby/graphql"
 
