@@ -4,18 +4,28 @@ import SEO from "../components/seo"
 
 import github from "../images/github.svg"
 
+// const logos = [
+//   {
+//     name: "gatsby",
+//     logo: require("../images/gatsby.svg"),
+//   },
+//   {
+//     name: "tailwind",
+//     logo: require("../images/tailwind.svg"),
+//   },
+//   {
+//     name: "emotion",
+//     logo: require("../images/emotion.png"),
+//   },
+//   {
+//     name: "avatar",
+//     logo: require("../images/avatar-red-circle.svg"),
+//   },
+// ]
 const logos = [
   {
-    name: "gatsby",
-    logo: require("../images/gatsby.svg"),
-  },
-  {
-    name: "tailwind",
-    logo: require("../images/tailwind.svg"),
-  },
-  {
-    name: "emotion",
-    logo: require("../images/emotion.png"),
+    name: "avatar",
+    logo: require("../images/bitwhys-logo.svg"),
   },
 ]
 
@@ -62,10 +72,14 @@ export default () => (
           ))}
       </Logos>
       <Heading>Hello, world!</Heading>
-      <Text>Welcome to the Gatsby Tailwind CSS + Emotion Starter.</Text>
+      <Text>
+        Welcome to The Tell-Us-Straighter:
+        <br />
+        Color Commentary in Black & White.
+      </Text>
       <Footer>
         <a
-          href="https://github.com/pauloelias/gatsby-tailwind-emotion-starter"
+          href="https://github.com/bitwhys/bitwhys.tech"
           target="_blank"
           rel="noopener noreferrer"
         >

@@ -8,6 +8,7 @@ module.exports = {
     `gatsby-plugin-emotion`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-mdx`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -22,6 +23,17 @@ module.exports = {
         path: `${__dirname}/content`,
       },
     },
-    `gatsby-plugin-mdx`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Tell-Us-Straighter`,
+        short_name: `Tell-Us-Straighter`,
+        start_url: `/`,
+        background_color: `#ff0844`,
+        theme_color: `#ff0844`,
+        display: `standalone`,
+        icon: `src/images/bitwhys-logo.svg`,
+      },
+    },
   ],
 }
