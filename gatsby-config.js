@@ -8,7 +8,6 @@ module.exports = {
     `gatsby-plugin-emotion`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-mdx`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -21,6 +20,14 @@ module.exports = {
       options: {
         name: `content`,
         path: `${__dirname}/content`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          default: require.resolve("./src/components/layout.js"),
+        },
       },
     },
     {

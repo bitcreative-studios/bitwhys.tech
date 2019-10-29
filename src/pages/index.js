@@ -4,24 +4,6 @@ import SEO from "../components/seo"
 
 import github from "../images/github.svg"
 
-// const logos = [
-//   {
-//     name: "gatsby",
-//     logo: require("../images/gatsby.svg"),
-//   },
-//   {
-//     name: "tailwind",
-//     logo: require("../images/tailwind.svg"),
-//   },
-//   {
-//     name: "emotion",
-//     logo: require("../images/emotion.png"),
-//   },
-//   {
-//     name: "avatar",
-//     logo: require("../images/avatar-red-circle.svg"),
-//   },
-// ]
 const logos = [
   {
     name: "avatar",
