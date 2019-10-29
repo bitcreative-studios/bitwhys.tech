@@ -1,12 +1,19 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Tailwind CSS + Emotion Starter`,
-    description: `A bare-bones Tailwind CSS + Emotion starter to kickoff your project. `,
-    author: `@pauloelias`,
+    title: `The Tell-Us-Straighter`,
+    description: `Color commentary, in black and white`,
+    author: `@bitwhys`,
   },
   plugins: [
     `gatsby-plugin-emotion`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content`,
+        path: `${__dirname}/content`,
+      },
+    },
   ],
 }
