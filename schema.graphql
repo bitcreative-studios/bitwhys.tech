@@ -835,8 +835,8 @@ enum FileFieldsEnum {
   childMdx___rawBody
   childMdx___fileAbsolutePath
   childMdx___frontmatter___title
-  childMdx___frontmatter___tag
   childMdx___frontmatter___path
+  childMdx___frontmatter___tag
   childMdx___body
   childMdx___excerpt @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childMdx___headings @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
@@ -1049,8 +1049,8 @@ enum MdxFieldsEnum {
   rawBody
   fileAbsolutePath
   frontmatter___title
-  frontmatter___tag
   frontmatter___path
+  frontmatter___tag
   body
   excerpt @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   headings @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
@@ -1171,14 +1171,14 @@ input MdxFilterInput {
 
 type MdxFrontmatter {
   title: String!
-  tag: String
   path: String
+  tag: String
 }
 
 input MdxFrontmatterFilterInput {
   title: StringQueryOperatorInput
-  tag: StringQueryOperatorInput
   path: StringQueryOperatorInput
+  tag: StringQueryOperatorInput
 }
 
 type MdxGroupConnection {

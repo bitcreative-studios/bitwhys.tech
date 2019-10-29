@@ -1,7 +1,11 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
-    title: `The Tell-Us-Straighter`,
-    description: `Color commentary, in black and white`,
+    title: `The Tell Us Straighter`,
+    description: `Providing color commentary about technical topics, in black and white.`,
     author: `@bitwhys`,
   },
   plugins: [
