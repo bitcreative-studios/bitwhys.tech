@@ -88,27 +88,7 @@ type Directory implements Node {
   internal: Internal!
   sourceInstanceName: String
   absolutePath: String
-  relativePath(
-    """
-    Format the date using Moment.js' date tokens, e.g. `date(formatString: "YYYY
-    MMMM DD")`. See https://momentjs.com/docs/#/displaying/format/ for
-    documentation for different tokens.
-    """
-    formatString: String
-
-    """Returns a string generated with Moment.js' `fromNow` function"""
-    fromNow: Boolean
-
-    """
-    Returns the difference between this date and the current time. Defaults to
-    "milliseconds" but you can also pass in as the measurement "years",
-    "months", "weeks", "days", "hours", "minutes", and "seconds".
-    """
-    difference: String
-
-    """Configures the locale Moment.js will use to format the date."""
-    locale: String
-  ): Date
+  relativePath: String
   extension: String
   size: Int
   prettySize: String
@@ -445,7 +425,7 @@ input DirectoryFilterInput {
   internal: InternalFilterInput
   sourceInstanceName: StringQueryOperatorInput
   absolutePath: StringQueryOperatorInput
-  relativePath: DateQueryOperatorInput
+  relativePath: StringQueryOperatorInput
   extension: StringQueryOperatorInput
   size: IntQueryOperatorInput
   prettySize: StringQueryOperatorInput
@@ -590,27 +570,7 @@ type File implements Node {
   base: String
   ext: String
   name: String
-  relativeDirectory(
-    """
-    Format the date using Moment.js' date tokens, e.g. `date(formatString: "YYYY
-    MMMM DD")`. See https://momentjs.com/docs/#/displaying/format/ for
-    documentation for different tokens.
-    """
-    formatString: String
-
-    """Returns a string generated with Moment.js' `fromNow` function"""
-    fromNow: Boolean
-
-    """
-    Returns the difference between this date and the current time. Defaults to
-    "milliseconds" but you can also pass in as the measurement "years",
-    "months", "weeks", "days", "hours", "minutes", and "seconds".
-    """
-    difference: String
-
-    """Configures the locale Moment.js will use to format the date."""
-    locale: String
-  ): Date
+  relativeDirectory: String
   dev: Int
   mode: Int
   nlink: Int
@@ -835,8 +795,8 @@ enum FileFieldsEnum {
   childMdx___rawBody
   childMdx___fileAbsolutePath
   childMdx___frontmatter___title
-  childMdx___frontmatter___path
-  childMdx___frontmatter___tag
+  childMdx___frontmatter___slug
+  childMdx___frontmatter___author
   childMdx___body
   childMdx___excerpt @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childMdx___headings @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
@@ -907,7 +867,7 @@ input FileFilterInput {
   base: StringQueryOperatorInput
   ext: StringQueryOperatorInput
   name: StringQueryOperatorInput
-  relativeDirectory: DateQueryOperatorInput
+  relativeDirectory: StringQueryOperatorInput
   dev: IntQueryOperatorInput
   mode: IntQueryOperatorInput
   nlink: IntQueryOperatorInput
@@ -1049,8 +1009,8 @@ enum MdxFieldsEnum {
   rawBody
   fileAbsolutePath
   frontmatter___title
-  frontmatter___path
-  frontmatter___tag
+  frontmatter___slug
+  frontmatter___author
   body
   excerpt @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   headings @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
@@ -1171,14 +1131,14 @@ input MdxFilterInput {
 
 type MdxFrontmatter {
   title: String!
-  path: String
-  tag: String
+  slug: String
+  author: String
 }
 
 input MdxFrontmatterFilterInput {
   title: StringQueryOperatorInput
-  path: StringQueryOperatorInput
-  tag: StringQueryOperatorInput
+  slug: StringQueryOperatorInput
+  author: StringQueryOperatorInput
 }
 
 type MdxGroupConnection {
@@ -1250,7 +1210,7 @@ type PageInfo {
 }
 
 type Query {
-  file(birthtime: DateQueryOperatorInput, birthtimeMs: FloatQueryOperatorInput, sourceInstanceName: StringQueryOperatorInput, absolutePath: StringQueryOperatorInput, relativePath: StringQueryOperatorInput, extension: StringQueryOperatorInput, size: IntQueryOperatorInput, prettySize: StringQueryOperatorInput, modifiedTime: DateQueryOperatorInput, accessTime: DateQueryOperatorInput, changeTime: DateQueryOperatorInput, birthTime: DateQueryOperatorInput, root: StringQueryOperatorInput, dir: StringQueryOperatorInput, base: StringQueryOperatorInput, ext: StringQueryOperatorInput, name: StringQueryOperatorInput, relativeDirectory: DateQueryOperatorInput, dev: IntQueryOperatorInput, mode: IntQueryOperatorInput, nlink: IntQueryOperatorInput, uid: IntQueryOperatorInput, gid: IntQueryOperatorInput, rdev: IntQueryOperatorInput, blksize: IntQueryOperatorInput, ino: IntQueryOperatorInput, blocks: IntQueryOperatorInput, atimeMs: FloatQueryOperatorInput, mtimeMs: FloatQueryOperatorInput, ctimeMs: FloatQueryOperatorInput, atime: DateQueryOperatorInput, mtime: DateQueryOperatorInput, ctime: DateQueryOperatorInput, publicURL: StringQueryOperatorInput, id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput, childMdx: MdxFilterInput): File
+  file(birthtime: DateQueryOperatorInput, birthtimeMs: FloatQueryOperatorInput, sourceInstanceName: StringQueryOperatorInput, absolutePath: StringQueryOperatorInput, relativePath: StringQueryOperatorInput, extension: StringQueryOperatorInput, size: IntQueryOperatorInput, prettySize: StringQueryOperatorInput, modifiedTime: DateQueryOperatorInput, accessTime: DateQueryOperatorInput, changeTime: DateQueryOperatorInput, birthTime: DateQueryOperatorInput, root: StringQueryOperatorInput, dir: StringQueryOperatorInput, base: StringQueryOperatorInput, ext: StringQueryOperatorInput, name: StringQueryOperatorInput, relativeDirectory: StringQueryOperatorInput, dev: IntQueryOperatorInput, mode: IntQueryOperatorInput, nlink: IntQueryOperatorInput, uid: IntQueryOperatorInput, gid: IntQueryOperatorInput, rdev: IntQueryOperatorInput, blksize: IntQueryOperatorInput, ino: IntQueryOperatorInput, blocks: IntQueryOperatorInput, atimeMs: FloatQueryOperatorInput, mtimeMs: FloatQueryOperatorInput, ctimeMs: FloatQueryOperatorInput, atime: DateQueryOperatorInput, mtime: DateQueryOperatorInput, ctime: DateQueryOperatorInput, publicURL: StringQueryOperatorInput, id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput, childMdx: MdxFilterInput): File
   allFile(filter: FileFilterInput, sort: FileSortInput, skip: Int, limit: Int): FileConnection!
   mdx(rawBody: StringQueryOperatorInput, fileAbsolutePath: StringQueryOperatorInput, frontmatter: MdxFrontmatterFilterInput, body: StringQueryOperatorInput, excerpt: StringQueryOperatorInput, headings: MdxHeadingMdxFilterListInput, html: StringQueryOperatorInput, mdxAST: JSONQueryOperatorInput, tableOfContents: JSONQueryOperatorInput, timeToRead: IntQueryOperatorInput, wordCount: MdxWordCountFilterInput, id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput): Mdx
   allMdx(filter: MdxFilterInput, sort: MdxSortInput, skip: Int, limit: Int): MdxConnection!
@@ -1260,7 +1220,7 @@ type Query {
   allSitePlugin(filter: SitePluginFilterInput, sort: SitePluginSortInput, skip: Int, limit: Int): SitePluginConnection!
   site(id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput, siteMetadata: SiteSiteMetadataFilterInput, port: IntQueryOperatorInput, host: StringQueryOperatorInput, polyfill: BooleanQueryOperatorInput, pathPrefix: StringQueryOperatorInput, buildTime: DateQueryOperatorInput): Site
   allSite(filter: SiteFilterInput, sort: SiteSortInput, skip: Int, limit: Int): SiteConnection!
-  directory(id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput, sourceInstanceName: StringQueryOperatorInput, absolutePath: StringQueryOperatorInput, relativePath: DateQueryOperatorInput, extension: StringQueryOperatorInput, size: IntQueryOperatorInput, prettySize: StringQueryOperatorInput, modifiedTime: DateQueryOperatorInput, accessTime: DateQueryOperatorInput, changeTime: DateQueryOperatorInput, birthTime: DateQueryOperatorInput, root: StringQueryOperatorInput, dir: StringQueryOperatorInput, base: StringQueryOperatorInput, ext: StringQueryOperatorInput, name: StringQueryOperatorInput, relativeDirectory: StringQueryOperatorInput, dev: IntQueryOperatorInput, mode: IntQueryOperatorInput, nlink: IntQueryOperatorInput, uid: IntQueryOperatorInput, gid: IntQueryOperatorInput, rdev: IntQueryOperatorInput, blksize: IntQueryOperatorInput, ino: IntQueryOperatorInput, blocks: IntQueryOperatorInput, atimeMs: FloatQueryOperatorInput, mtimeMs: FloatQueryOperatorInput, ctimeMs: FloatQueryOperatorInput, birthtimeMs: FloatQueryOperatorInput, atime: DateQueryOperatorInput, mtime: DateQueryOperatorInput, ctime: DateQueryOperatorInput, birthtime: DateQueryOperatorInput): Directory
+  directory(id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput, sourceInstanceName: StringQueryOperatorInput, absolutePath: StringQueryOperatorInput, relativePath: StringQueryOperatorInput, extension: StringQueryOperatorInput, size: IntQueryOperatorInput, prettySize: StringQueryOperatorInput, modifiedTime: DateQueryOperatorInput, accessTime: DateQueryOperatorInput, changeTime: DateQueryOperatorInput, birthTime: DateQueryOperatorInput, root: StringQueryOperatorInput, dir: StringQueryOperatorInput, base: StringQueryOperatorInput, ext: StringQueryOperatorInput, name: StringQueryOperatorInput, relativeDirectory: StringQueryOperatorInput, dev: IntQueryOperatorInput, mode: IntQueryOperatorInput, nlink: IntQueryOperatorInput, uid: IntQueryOperatorInput, gid: IntQueryOperatorInput, rdev: IntQueryOperatorInput, blksize: IntQueryOperatorInput, ino: IntQueryOperatorInput, blocks: IntQueryOperatorInput, atimeMs: FloatQueryOperatorInput, mtimeMs: FloatQueryOperatorInput, ctimeMs: FloatQueryOperatorInput, birthtimeMs: FloatQueryOperatorInput, atime: DateQueryOperatorInput, mtime: DateQueryOperatorInput, ctime: DateQueryOperatorInput, birthtime: DateQueryOperatorInput): Directory
   allDirectory(filter: DirectoryFilterInput, sort: DirectorySortInput, skip: Int, limit: Int): DirectoryConnection!
 }
 

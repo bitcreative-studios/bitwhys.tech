@@ -22,7 +22,7 @@ const StyledHeader = styled.header`
 const Header = () => (
   <StyledHeader>
     <NavLink to="/" fontWeight="bold">
-      FEM&nbsp;Workshop
+      The Tell&nbsp;Us&nbsp;Straighter
     </NavLink>
     <nav>
       <NavLink to="/" activeClassName="current-page">
