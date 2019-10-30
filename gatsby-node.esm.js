@@ -2,6 +2,10 @@ import path from "path"
 import write from "write"
 import { introspectionQuery, graphql, printSchema } from "gatsby/graphql"
 
+const helpers = {
+  template: path.resolve(__dirname, "src/templates/posts.js"),
+}
+
 /**
  * Generate GraphQL schema.json file to be read by eslint
  * Thanks: https://gist.github.com/kkemple/6169e8dc16369b7c01ad7408fc7917a9
@@ -34,4 +38,34 @@ exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
     fs: "empty",
   }
   // TODO: absolute imports
+}
+
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  const result = await graphql(`
+    query {
+      allMdx {
+        nodes {
+          frontmatter {
+            slug
+          }
+        }
+      }
+    }
+  `)
+
+  if (result.errors) {
+    reporter.panic("failed to create posts", result.errors)
+  }
+
+  const posts = result.data.allMdx.nodes
+
+  posts.forEach(post => {
+    actions.createPage({
+      path: `/${post.frontmatter.slug}/`,
+      component: helpers.template,
+      context: {
+        slug: post.frontmatter.slug,
+      },
+    })
+  })
 }
