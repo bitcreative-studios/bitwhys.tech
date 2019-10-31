@@ -14,6 +14,7 @@ import {
   Wrapper,
 } from "@components/index"
 import Lorem from "@components/Lorem"
+import Container from "@components/elements/Container"
 
 const logos = [
   {
@@ -23,7 +24,7 @@ const logos = [
 ]
 
 export default () => (
-  <div>
+  <Container>
     <SEO title="Home" />
     <Main
       css={css`
@@ -47,5 +48,5 @@ export default () => (
         </a>
       </Footer>
     </Main>
-  </div>
+  </Container>
 )

@@ -16,25 +16,16 @@ const overrideStyles = ({ rhythm }) => ({
   h1: {
     fontFamily: "Fira Sans",
   },
-  "h1 code, h2 code, h3 code, h4 code, h5 code, h6 code": {
-    fontSize: "inherit",
-  },
-  h2: {},
-  h3: {},
-  "h1,h2,h3,h4": {
-    lineHeight: 1.25,
-    marginTop: rhythm(1),
-    marginBottom: rhythm(1 / 2),
-    // letterSpacing: "-0.04rem",
-  },
-  strong: {
-    fontStyle: "bold",
+  "@media only screen and (max-width: 548px)": {
+    html: {
+      "font-size": "90%",
+    },
   },
 })
 
 const typography = new Typography({
   googleFonts,
-  baseFontSize: "19px",
+  baseFontSize: "17px",
   baseLineHeight: 1.666,
   headerFontFamily: ["Ek Mukta", "Fira Sans", "Roboto Condensed", "sans-serif"],
   bodyFontFamily: ["alverata", "Georgia", "serif"],
