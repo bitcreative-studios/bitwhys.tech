@@ -1,4 +1,5 @@
 import React from "react"
+import { css } from "@emotion/core"
 import SEO from "@components/seo"
 
 import github from "../images/github.svg"
@@ -12,6 +13,7 @@ import {
   Text,
   Wrapper,
 } from "@components/index"
+import Lorem from "@components/Lorem"
 
 const logos = [
   {
@@ -21,21 +23,20 @@ const logos = [
 ]
 
 export default () => (
-  <Wrapper>
+  <div>
     <SEO title="Home" />
-    <Main>
+    <Main
+      css={css`
+        max-width: 750px;
+      `}
+    >
       <Logos>
         {logos &&
           logos.map(({ name, logo }, index) => (
             <Icon src={logo} alt={`${name} Logo`} key={index} />
           ))}
       </Logos>
-      <Heading>Hello, world!</Heading>
-      <Text>
-        Welcome to The Tell-Us-Straighter:
-        <br />
-        Color Commentary in Black & White.
-      </Text>
+      <Lorem />
       <Footer>
         <a
           href="https://github.com/bitwhys/bitwhys.tech"
@@ -46,5 +47,5 @@ export default () => (
         </a>
       </Footer>
     </Main>
-  </Wrapper>
+  </div>
 )

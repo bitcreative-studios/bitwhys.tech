@@ -5,7 +5,7 @@ export const Wrapper = tw.div`
 `
 
 export const Main = tw.div`
-  p-6 bg-gray-100 rounded-lg shadow-2xl
+  p-6 mx-auto
 `
 
 export const Heading = tw.h1`
