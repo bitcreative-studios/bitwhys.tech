@@ -5,6 +5,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `The Tell Us Straighter`,
+    shortName: "Tell Us Straighter",
     description: `Providing colored commentary. Musings, explanations and 
     general explorations regarding everything related to creating modern software`,
     author: `@bitwhys`,

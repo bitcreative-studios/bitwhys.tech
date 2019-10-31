@@ -15,6 +15,7 @@ import {
 } from "@components/index"
 import Lorem from "@components/Lorem"
 import Container from "@components/elements/Container"
+import Header from "@components/Header"
 
 const logos = [
   {
@@ -26,6 +27,7 @@ const logos = [
 export default () => (
   <Container>
     <SEO title="Home" />
+    <Header />
     <Main
       css={css`
         max-width: 750px;
