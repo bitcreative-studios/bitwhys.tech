@@ -39,7 +39,7 @@ const Hero = () => {
           banner {
             sharp: childImageSharp {
               fluid(quality: 80, maxWidth: 1920, grayscale: true) {
-                src
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
               }
             }
           }
