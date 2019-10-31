@@ -1,5 +1,5 @@
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`
+  path: `.env.${process.env.NODE_ENV}`,
 })
 
 module.exports = {
@@ -28,6 +28,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `${__dirname}/src/utils/typography.js`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
@@ -53,7 +59,7 @@ module.exports = {
         production: true,
         disable: !process.env.ANALYZE_BUNDLE_SIZE,
         generateStatFile: true,
-        analyzerMode: 'static'
+        analyzerMode: "static",
       },
     },
   ],

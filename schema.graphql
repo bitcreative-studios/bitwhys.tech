@@ -835,7 +835,6 @@ enum FileFieldsEnum {
   childMdx___rawBody
   childMdx___fileAbsolutePath
   childMdx___frontmatter___title
-  childMdx___frontmatter___author
   childMdx___frontmatter___path
   childMdx___frontmatter___tag
   childMdx___body
@@ -1050,7 +1049,6 @@ enum MdxFieldsEnum {
   rawBody
   fileAbsolutePath
   frontmatter___title
-  frontmatter___author
   frontmatter___path
   frontmatter___tag
   body
@@ -1173,14 +1171,12 @@ input MdxFilterInput {
 
 type MdxFrontmatter {
   title: String!
-  author: String
   path: String
   tag: String
 }
 
 input MdxFrontmatterFilterInput {
   title: StringQueryOperatorInput
-  author: StringQueryOperatorInput
   path: StringQueryOperatorInput
   tag: StringQueryOperatorInput
 }
@@ -1258,7 +1254,7 @@ type Query {
   allFile(filter: FileFilterInput, sort: FileSortInput, skip: Int, limit: Int): FileConnection!
   mdx(rawBody: StringQueryOperatorInput, fileAbsolutePath: StringQueryOperatorInput, frontmatter: MdxFrontmatterFilterInput, body: StringQueryOperatorInput, excerpt: StringQueryOperatorInput, headings: MdxHeadingMdxFilterListInput, html: StringQueryOperatorInput, mdxAST: JSONQueryOperatorInput, tableOfContents: JSONQueryOperatorInput, timeToRead: IntQueryOperatorInput, wordCount: MdxWordCountFilterInput, id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput): Mdx
   allMdx(filter: MdxFilterInput, sort: MdxSortInput, skip: Int, limit: Int): MdxConnection!
-  sitePage(id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput, path: StringQueryOperatorInput, internalComponentName: StringQueryOperatorInput, component: StringQueryOperatorInput, componentChunkName: StringQueryOperatorInput, isCreatedByStatefulCreatePages: BooleanQueryOperatorInput, context: SitePageContextFilterInput, pluginCreator: SitePluginFilterInput, pluginCreatorId: StringQueryOperatorInput, componentPath: StringQueryOperatorInput): SitePage
+  sitePage(id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput, path: StringQueryOperatorInput, internalComponentName: StringQueryOperatorInput, component: StringQueryOperatorInput, componentChunkName: StringQueryOperatorInput, isCreatedByStatefulCreatePages: BooleanQueryOperatorInput, pluginCreator: SitePluginFilterInput, pluginCreatorId: StringQueryOperatorInput, componentPath: StringQueryOperatorInput): SitePage
   allSitePage(filter: SitePageFilterInput, sort: SitePageSortInput, skip: Int, limit: Int): SitePageConnection!
   sitePlugin(id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput, resolve: StringQueryOperatorInput, name: StringQueryOperatorInput, version: StringQueryOperatorInput, pluginOptions: SitePluginPluginOptionsFilterInput, nodeAPIs: StringQueryOperatorInput, browserAPIs: StringQueryOperatorInput, ssrAPIs: StringQueryOperatorInput, pluginFilepath: StringQueryOperatorInput, packageJson: SitePluginPackageJsonFilterInput): SitePlugin
   allSitePlugin(filter: SitePluginFilterInput, sort: SitePluginSortInput, skip: Int, limit: Int): SitePluginConnection!
@@ -1445,7 +1441,6 @@ type SitePage implements Node {
   component: String
   componentChunkName: String
   isCreatedByStatefulCreatePages: Boolean
-  context: SitePageContext
   pluginCreator: SitePlugin
   pluginCreatorId: String
   componentPath: String
@@ -1458,24 +1453,6 @@ type SitePageConnection {
   pageInfo: PageInfo!
   distinct(field: SitePageFieldsEnum!): [String!]!
   group(skip: Int, limit: Int, field: SitePageFieldsEnum!): [SitePageGroupConnection!]!
-}
-
-type SitePageContext {
-  frontmatter: SitePageContextFrontmatter
-}
-
-input SitePageContextFilterInput {
-  frontmatter: SitePageContextFrontmatterFilterInput
-}
-
-type SitePageContextFrontmatter {
-  title: String
-  author: String
-}
-
-input SitePageContextFrontmatterFilterInput {
-  title: StringQueryOperatorInput
-  author: StringQueryOperatorInput
 }
 
 type SitePageEdge {
@@ -1576,8 +1553,6 @@ enum SitePageFieldsEnum {
   component
   componentChunkName
   isCreatedByStatefulCreatePages
-  context___frontmatter___title
-  context___frontmatter___author
   pluginCreator___id
   pluginCreator___parent___id
   pluginCreator___parent___parent___id
@@ -1621,6 +1596,7 @@ enum SitePageFieldsEnum {
   pluginCreator___version
   pluginCreator___pluginOptions___name
   pluginCreator___pluginOptions___path
+  pluginCreator___pluginOptions___pathToConfigModule
   pluginCreator___pluginOptions___defaultLayouts___default
   pluginCreator___pluginOptions___short_name
   pluginCreator___pluginOptions___start_url
@@ -1667,7 +1643,6 @@ input SitePageFilterInput {
   component: StringQueryOperatorInput
   componentChunkName: StringQueryOperatorInput
   isCreatedByStatefulCreatePages: BooleanQueryOperatorInput
-  context: SitePageContextFilterInput
   pluginCreator: SitePluginFilterInput
   pluginCreatorId: StringQueryOperatorInput
   componentPath: StringQueryOperatorInput
@@ -1810,6 +1785,7 @@ enum SitePluginFieldsEnum {
   version
   pluginOptions___name
   pluginOptions___path
+  pluginOptions___pathToConfigModule
   pluginOptions___defaultLayouts___default
   pluginOptions___short_name
   pluginOptions___start_url
@@ -1940,6 +1916,7 @@ input SitePluginPackageJsonPeerDependenciesFilterListInput {
 type SitePluginPluginOptions {
   name: String
   path: String
+  pathToConfigModule: String
   defaultLayouts: SitePluginPluginOptionsDefaultLayouts
   short_name: String
   start_url: String
@@ -1965,6 +1942,7 @@ input SitePluginPluginOptionsDefaultLayoutsFilterInput {
 input SitePluginPluginOptionsFilterInput {
   name: StringQueryOperatorInput
   path: StringQueryOperatorInput
+  pathToConfigModule: StringQueryOperatorInput
   defaultLayouts: SitePluginPluginOptionsDefaultLayoutsFilterInput
   short_name: StringQueryOperatorInput
   start_url: StringQueryOperatorInput

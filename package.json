@@ -23,11 +23,14 @@
     "gatsby-plugin-mdx": "^1.0.55",
     "gatsby-plugin-postcss": "^2.1.13",
     "gatsby-plugin-react-helmet": "^3.1.13",
+    "gatsby-plugin-typography": "^2.3.15",
     "postcss-import": "^12.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-typography": "^0.16.19",
+    "typography": "^0.16.19"
   },
   "devDependencies": {
     "babel-preset-gatsby": "^0.2.20",
