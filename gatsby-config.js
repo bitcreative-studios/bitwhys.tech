@@ -1,7 +1,12 @@
+require("dotenv").config({
+  path: `.env.${process.env}`
+})
+
 module.exports = {
   siteMetadata: {
-    title: `The Tell-Us-Straighter`,
-    description: `Color commentary, in black and white`,
+    title: `The Tell Us Straighter`,
+    description: `Providing colored commentary. Musings, explanations and 
+    general explorations regarding everything related to creating modern software`,
     author: `@bitwhys`,
   },
   plugins: [
@@ -40,6 +45,15 @@ module.exports = {
         theme_color: `#ff0844`,
         display: `standalone`,
         icon: `src/images/bitwhys-logo.svg`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-webpack-bundle-analyzer`,
+      options: {
+        production: true,
+        disable: !process.env.ANALYZE_BUNDLE_SIZE,
+        generateStatFile: true,
+        analyzerMode: 'static'
       },
     },
   ],
