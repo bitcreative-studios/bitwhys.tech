@@ -45,7 +45,7 @@ const Header = ({ homePage }) => {
         <Brand to="/">{title}</Brand>
         <nav>
           {menu.map(link => (
-            <MenuItem to={`/${link}`}>{link}</MenuItem>
+            <MenuItem to={`/${link.toLowerCase()}`}>{link}</MenuItem>
           ))}
         </nav>
       </Container>

@@ -1,6 +1,9 @@
 import path from "path"
 import write from "write"
 import { introspectionQuery, graphql, printSchema } from "gatsby/graphql"
+import slugify from "@sindresorhus/slugify"
+import { createFilePath } from "gatsby-source-filesystem"
+import stripMarkdown from "strip-markdown"
 
 /**
  * Generate GraphQL schema.json file to be read by eslint
@@ -35,6 +38,7 @@ exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
         "@components": path.resolve(__dirname, "src/components"),
         "@utils": path.resolve(__dirname, "src/utils"),
         "@hooks": path.resolve(__dirname, "src/utils/hooks"),
+        "@images": path.resolve(__dirname, "images"),
       },
     },
   })
@@ -43,4 +47,105 @@ exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
     fs: "empty",
   }
   // TODO: absolute imports
+}
+
+/**
+ * credit: Kent C. Dodds
+ * via: https://github.com/kentcdodds/kentcdodds.com/blob/master/gatsby-node.js
+ * eslint-disable-next-line complexity
+ */
+exports.onCreateNode = ({ node, getNode, actions, reporter }) => {
+  const { createNodeField } = actions
+
+  if (node.internal.type === `Mdx`) {
+    const parent = getNode(node.parent)
+    let slug =
+      node.frontmatter.slug ||
+      createFilePath({ node, getNode, basePath: `pages` })
+
+    if (node.fileAbsolutePath.includes("content/blog/")) {
+      slug = `/blog/${node.frontmatter.slug || slugify(parent.name)}`
+    }
+
+    createNodeField({
+      name: "id",
+      node,
+      value: node.id,
+    })
+
+    createNodeField({
+      name: "published",
+      node,
+      value: node.frontmatter.published,
+    })
+
+    createNodeField({
+      name: "title",
+      node,
+      value: node.frontmatter.title,
+    })
+
+    createNodeField({
+      name: "author",
+      node,
+      value: node.frontmatter.author,
+    })
+
+    createNodeField({
+      name: "description",
+      node,
+      value: node.frontmatter.description,
+    })
+
+    createNodeField({
+      name: "plainTextDescription",
+      node,
+      value: stripMarkdown(node.frontmatter.description),
+    })
+
+    createNodeField({
+      name: "slug",
+      node,
+      value: slug,
+    })
+
+    createNodeField({
+      name: "date",
+      node,
+      value: node.frontmatter.date ? node.frontmatter.date.split(" ")[0] : "",
+    })
+
+    createNodeField({
+      name: "banner",
+      node,
+      value: node.frontmatter.banner,
+    })
+
+    createNodeField({
+      name: "bannerCredit",
+      node,
+      value: node.frontmatter.bannerCredit,
+    })
+
+    createNodeField({
+      name: "topic",
+      node,
+      value: node.frontmatter.topic || "general",
+    })
+
+    createNodeField({
+      name: "keywords",
+      node,
+      value: node.frontmatter.keywords || [],
+    })
+
+    createNodeField({
+      name: "editLink",
+      node,
+      value: `https://github.com/bitwhys/bitwhys.tech/edit/master${node.fileAbsolutePath.replace(
+        __dirname,
+        ""
+      )}`,
+    })
+  }
 }

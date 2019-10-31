@@ -6,19 +6,22 @@ module.exports = {
   siteMetadata: {
     title: `The Tell Us Straighter`,
     shortName: "Tell Us Straighter",
-    description: `Providing colored commentary. Musings, explanations and 
-    general explorations regarding everything related to creating modern software`,
+    tagLine: "Providing colored commentary, in black & white.",
+    description: `Musings, explanations and 
+    general explorations regarding everything related to the creating of modern software`,
     author: `@bitwhys`,
   },
   plugins: [
     `gatsby-plugin-emotion`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `pages`,
-        path: `${__dirname}/src/pages`,
+        name: `blog`,
+        path: `${__dirname}/content/blog`,
       },
     },
     {
@@ -26,6 +29,13 @@ module.exports = {
       options: {
         name: `content`,
         path: `${__dirname}/content`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/images`,
       },
     },
     {
@@ -40,6 +50,7 @@ module.exports = {
         defaultLayouts: {
           default: require.resolve("./src/components/layout.js"),
         },
+        extensions: [".mdx", ".md", ".markdown"],
       },
     },
     {
@@ -51,7 +62,7 @@ module.exports = {
         background_color: `#ff0844`,
         theme_color: `#ff0844`,
         display: `standalone`,
-        icon: `src/images/bitwhys-logo.svg`,
+        icon: `images/avatar.svg`,
       },
     },
     {
