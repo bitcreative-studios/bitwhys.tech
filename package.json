@@ -8,7 +8,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "yarn run develop",
+    "start": "nodemon",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
   },
@@ -34,6 +34,7 @@
     "esm": "^3.2.25",
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.5",
     "gatsby-source-filesystem": "^2.1.35",
+    "nodemon": "^1.19.4",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^1.18.2",
     "tailwind.macro": "^1.0.0-alpha.10",

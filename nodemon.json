@@ -1,0 +1,7 @@
+{
+  "ignore": [".cache", ".git", "public/**", "node_modules/**"],
+  "watch": ["src", "gatsby*","package.json", "tailwind.config.js"],
+  "exec": "yarn run develop",
+  "runOnChangeOnly": false,
+  "verbose": true
+}
