@@ -1,15 +1,15 @@
 import React from "react"
 import { css } from "@emotion/core"
-import SEO from "@components/seo"
-
-import { Footer, Icon, Logos, Main, SmallIcon } from "@components/index"
-import Lorem from "@components/Lorem"
-import Container from "@components/elements/Container"
-import Header from "@components/Header"
 
 import avatar from "@images/avatar.svg"
 import github from "@images/github.svg"
+import Header from "@components/Header"
 import Hero from "@components/Hero"
+import Lorem from "@components/Lorem"
+import Section from "@components/elements/Section"
+import SEO from "@components/seo"
+import { Footer, Icon, Logos, SmallIcon } from "@components/index"
+import Gallery from "@components/Gallery"
 
 const logos = [
   {
@@ -20,11 +20,14 @@ const logos = [
 
 export default () => (
   <>
+    <SEO title="Home" />
     <Header />
     <Hero />
-    <Container>
-      <SEO title="Home" />
-      <Main
+    <Section heading="pretty things">
+      <Gallery />
+    </Section>
+    <Section heading="My Changelog">
+      <article
         css={css`
           max-width: 750px;
         `}
@@ -45,7 +48,7 @@ export default () => (
             <SmallIcon src={github} alt="Githib Icon" />
           </a>
         </Footer>
-      </Main>
-    </Container>
+      </article>
+    </Section>
   </>
 )

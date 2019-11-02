@@ -3,3 +3,5 @@
   the rest of Tailwind's classes in the project
 */
 @import url("https://use.typekit.net/ctw1mqp.css");
+
+@tailwind utilities;

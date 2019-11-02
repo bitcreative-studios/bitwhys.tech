@@ -1,11 +1,11 @@
 import React from "react"
-import styled from "@emotion/styled"
-import { Link, graphql, useStaticQuery } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
-
-import { mq } from "@utils"
+import styled from "@emotion/styled"
 import { css } from "@emotion/core"
+import { graphql, useStaticQuery } from "gatsby"
+
 import Container from "@components/elements/Container"
+import { mq } from "@utils"
 
 const ImageBackground = styled(BackgroundImage)`
   background-position: top 20% center;
@@ -54,7 +54,7 @@ const Hero = () => {
     }
   `)
   return (
-    <ImageBackground Tag="section" fluid={image.banner.sharp.fluid}>
+    <ImageBackground Tag="div" fluid={image.banner.sharp.fluid}>
       <TextBox>
         <h1>
           Providing colored commentary, in{" "}
@@ -63,12 +63,12 @@ const Hero = () => {
               color: #ff0844;
             `}
           >
-            black & white.
+            black&nbsp;&&nbsp;white.
           </span>
         </h1>
         <p
           css={css`
-            max-width: 55%;
+            max-width: 660px;
             text-align: center;
           `}
         >

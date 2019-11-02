@@ -1,7 +1,7 @@
 import React from "react"
 
 const Lorem = () => (
-  <div>
+  <>
     <h1>Curabitur ligula sapien, tincidunt non, euismod vitae?</h1>
     <p>
       Quis gravida magna mi a libero. Fusce vulputate eleifend sapien.
@@ -65,6 +65,6 @@ const Lorem = () => (
       eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
       voluptua.
     </p>
-  </div>
+  </>
 )
 export default Lorem

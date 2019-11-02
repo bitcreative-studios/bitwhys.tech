@@ -12,8 +12,8 @@
 
 ## Components
 
-- Header
-- Hero
+- ~~Header~~
+- ~~Hero~~
 - Gallery
 - Feed
     - FeedItem

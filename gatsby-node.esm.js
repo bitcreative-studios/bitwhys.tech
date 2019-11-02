@@ -1,9 +1,9 @@
 import path from "path"
-import write from "write"
-import { introspectionQuery, graphql, printSchema } from "gatsby/graphql"
 import slugify from "@sindresorhus/slugify"
-import { createFilePath } from "gatsby-source-filesystem"
 import stripMarkdown from "strip-markdown"
+import write from "write"
+import { createFilePath } from "gatsby-source-filesystem"
+import { introspectionQuery, graphql, printSchema } from "gatsby/graphql"
 
 /**
  * Generate GraphQL schema.json file to be read by eslint
@@ -30,8 +30,6 @@ exports.onPostBootstrap = async ({ store }) => {
 }
 
 exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
-  // Hack due to Tailwind ^1.1.0 using `reduce-css-calc` which assumes node
-  // https://github.com/bradlc/babel-plugin-tailwind-components/issues/39#issuecomment-526892633
   actions.setWebpackConfig({
     resolve: {
       alias: {
@@ -42,11 +40,12 @@ exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
       },
     },
   })
+  // Hack due to Tailwind ^1.1.0 using `reduce-css-calc` which assumes node
+  // https://github.com/bradlc/babel-plugin-tailwind-components/issues/39#issuecomment-526892633
   const config = getConfig()
   config.node = {
     fs: "empty",
   }
-  // TODO: absolute imports
 }
 
 /**

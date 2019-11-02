@@ -1,6 +1,6 @@
 {
   "ignore": ["src",".cache", ".git", "public/**", "node_modules/**"],
-  "watch": ["gatsby-node.esm.js", "gatsby-config.js","gatsby-browser.js","gatsby-node.js","package.json", "tailwind.config.js"],
+  "watch": ["config/**","gatsby-node.esm.js", "gatsby-config.js","gatsby-browser.js","gatsby-node.js","package.json", "tailwind.config.js"],
   "exec": "yarn run develop",
   "runOnChangeOnly": false,
   "verbose": true

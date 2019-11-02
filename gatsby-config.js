@@ -1,7 +1,7 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
-
+const sourceOptions = require("./config/gatbsy-source-options")
 module.exports = {
   siteMetadata: {
     title: `The Tell Us Straighter`,
@@ -17,27 +17,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `blog`,
-        path: `${__dirname}/content/blog`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `content`,
-        path: `${__dirname}/content`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/images`,
-      },
-    },
+    ...sourceOptions,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
